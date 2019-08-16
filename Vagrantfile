@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
     hadoop.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: "192.168.15.41"
     hadoop.vm.hostname = "node1.infobarbosa.github.com"
     hadoop.vm.provider "virtualbox" do |v|
-      v.memory = 512
+      v.memory = 2048
       v.cpus = 1
       v.name = "node1-lab-hadoop.vagrant"
     end
@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     hadoop.vm.provision "file", source: "config-files/yarn-site.xml", destination: "yarn-site.xml"
     hadoop.vm.provision "file", source: "config-files/mapred-site.xml", destination: "mapred-site.xml"
     hadoop.vm.provision "file", source: "config-files/hosts", destination: "hosts"
-    hadoop.vm.provision "file", source: "master_key.pub", destination: "master_key.pub"
+    hadoop.vm.provision "file", source: "config-files/master_key.pub", destination: "master_key.pub"
     hadoop.vm.provision "file", source: "packages/hadoop-3.2.0.tar.gz", destination: "hadoop-3.2.0.tar.gz"
 
     #root script
@@ -86,7 +86,7 @@ Vagrant.configure("2") do |config|
     hadoop.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: "192.168.15.42"
     hadoop.vm.hostname = "node2.infobarbosa.github.com"
     hadoop.vm.provider "virtualbox" do |v|
-      v.memory = 512
+      v.memory = 2048
       v.cpus = 1
       v.name = "node2-lab-hadoop.vagrant"
     end
@@ -96,7 +96,7 @@ Vagrant.configure("2") do |config|
     hadoop.vm.provision "file", source: "config-files/yarn-site.xml", destination: "yarn-site.xml"
     hadoop.vm.provision "file", source: "config-files/mapred-site.xml", destination: "mapred-site.xml"
     hadoop.vm.provision "file", source: "config-files/hosts", destination: "hosts"
-    hadoop.vm.provision "file", source: "master_key.pub", destination: "master_key.pub"
+    hadoop.vm.provision "file", source: "config-files/master_key.pub", destination: "master_key.pub"
     hadoop.vm.provision "file", source: "packages/hadoop-3.2.0.tar.gz", destination: "hadoop-3.2.0.tar.gz"
 
     #root script
@@ -162,7 +162,7 @@ Vagrant.configure("2") do |config|
     hadoop.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: "192.168.15.43"
     hadoop.vm.hostname = "node3.infobarbosa.github.com"
     hadoop.vm.provider "virtualbox" do |v|
-      v.memory = 512
+      v.memory = 2048
       v.cpus = 1
       v.name = "node3-lab-hadoop.vagrant"
     end
@@ -172,7 +172,7 @@ Vagrant.configure("2") do |config|
     hadoop.vm.provision "file", source: "config-files/yarn-site.xml", destination: "yarn-site.xml"
     hadoop.vm.provision "file", source: "config-files/mapred-site.xml", destination: "mapred-site.xml"
     hadoop.vm.provision "file", source: "config-files/hosts", destination: "hosts"
-    hadoop.vm.provision "file", source: "master_key.pub", destination: "master_key.pub"
+    hadoop.vm.provision "file", source: "config-files/master_key.pub", destination: "master_key.pub"
     hadoop.vm.provision "file", source: "packages/hadoop-3.2.0.tar.gz", destination: "hadoop-3.2.0.tar.gz"
 
     #root script
@@ -237,7 +237,7 @@ Vagrant.configure("2") do |config|
     hadoop.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: "192.168.15.40"
     hadoop.vm.hostname = "master.infobarbosa.github.com"
     hadoop.vm.provider "virtualbox" do |v|
-      v.memory = 512
+      v.memory = 2048
       v.cpus = 1
       v.name = "master-lab-hadoop.vagrant"
     end
@@ -248,8 +248,8 @@ Vagrant.configure("2") do |config|
     hadoop.vm.provision "file", source: "config-files/yarn-site.xml", destination: "yarn-site.xml"
     hadoop.vm.provision "file", source: "config-files/mapred-site.xml", destination: "mapred-site.xml"
     hadoop.vm.provision "file", source: "config-files/hosts", destination: "hosts"
-    hadoop.vm.provision "file", source: "master_key", destination: "master_key"
-    hadoop.vm.provision "file", source: "master_key.pub", destination: "master_key.pub"
+    hadoop.vm.provision "file", source: "config-files/master_key", destination: "master_key"
+    hadoop.vm.provision "file", source: "config-files/master_key.pub", destination: "master_key.pub"
     hadoop.vm.provision "file", source: "packages/hadoop-3.2.0.tar.gz", destination: "hadoop-3.2.0.tar.gz"
 
     #root script
